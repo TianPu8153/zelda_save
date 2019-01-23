@@ -1,2 +1,2 @@
-auto_pull=True
+auto_pull=False
 auto_push=True

@@ -18,11 +18,11 @@ auto_pull=bool(data[0].split("=")[1].split("\n")[0])
 auto_push=bool(data[1].split("=")[1].split("\n")[0])
 f.close()
 #写pull的代码
-# if(auto_pull==True):
-# 	os.system("git fetch")
-# 	os.system("git diff origin/master")
-# 	os.system("git merge origin master")
-p = subprocess.Popen(r"C:\Program Files (x86)\Tencent\WeChat\WeChat.exe") 
+if(auto_pull==True):
+	os.system("git fetch")
+	os.system("git diff origin/master")
+	os.system("git merge origin master")
+p = subprocess.Popen(r"E:\Cemu+1.8.0+V0.25\cemu.exe") 
 q = psutil.Process(p.pid) 
 while(True):
 	time.sleep(2)
@@ -31,10 +31,12 @@ while(True):
 	except :
 		#pid对应的进程结束
 		#这里写文件上传的代码
+		if(auto_push==True):
+			os.system("git add .")
+			os.system(r'git commit -m "auto"')
+			os.system('git push origin master')
 		break
+input("输入任意键退出")
 
-os.system("git add .")
-os.system(r'git commit -m "auto"')
-os.system('git push origin master')
 
 
