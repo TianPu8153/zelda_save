@@ -22,7 +22,7 @@ if(auto_pull==True):
 	os.system("git fetch")
 	os.system("git diff origin/master")
 	os.system("git merge origin master")
-p = subprocess.Popen(r"E:\Cemu+1.8.0+V0.25\cemu.exe") 
+p = subprocess.Popen(r"C:\Program Files (x86)\Tencent\WeChat\WeChat.exe") 
 q = psutil.Process(p.pid) 
 while(True):
 	time.sleep(2)
